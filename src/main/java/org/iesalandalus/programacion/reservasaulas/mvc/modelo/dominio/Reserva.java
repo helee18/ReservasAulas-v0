@@ -73,7 +73,7 @@ public class Reserva {
 
 	@Override
 	public String toString() {
-		return "Profesor=" + getProfesor() + ", permanencia=" + getPermanencia() + ", aula=" + getAula();
+		return "Profesor=" + getProfesor() + ", aula=" + getAula() + ", permanencia=" + getPermanencia();
 	}
 	
 	
