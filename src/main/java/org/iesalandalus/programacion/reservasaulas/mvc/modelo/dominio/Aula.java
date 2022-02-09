@@ -68,7 +68,7 @@ public class Aula {
 
 	@Override
 	public String toString() {
-		return "nombre Aula=" + nombre;
+		return "nombre Aula=" + getNombre();
 	}
 	
 	
