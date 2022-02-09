@@ -65,7 +65,7 @@ public class Permanencia {
 
 	@Override
 	public String toString() {
-		return "dia=" + getDia() + ", tramo=" + getTramo();
+		return "dia=" + FORMATO_DIA.format(dia) + ", tramo=" + getTramo();
 	}
 	
 	
