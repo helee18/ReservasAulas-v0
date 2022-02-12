@@ -34,7 +34,7 @@ public class Profesores {
 		coleccionCopiaProfesores = new Profesor[getTamano()];
 		
 		// recorremos todas las citas comparando
-		for (int i = 0; i < getCapacidad() &&  coleccionProfesores[i] != null; i++) {
+		for (int i = 0; i < coleccionProfesoresOriginal.length && coleccionProfesoresOriginal[i] != null; i++) {
 			Profesor profesorCopia = new Profesor(coleccionProfesoresOriginal[i]);
 			coleccionCopiaProfesores[i] = profesorCopia;
 		}

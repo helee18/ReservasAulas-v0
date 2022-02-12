@@ -33,7 +33,7 @@ public class Aulas {
 		coleccionCopiaAulas = new Aula[getTamano()];
 		
 		// recorremos todas las citas comparando
-		for (int i = 0; i < getCapacidad() && coleccionAulas[i] != null; i++) {
+		for (int i = 0; i < coleccionAulasOriginal.length && coleccionAulasOriginal[i] != null; i++) {
 			Aula aulaCopia = new Aula(coleccionAulasOriginal[i]);
 			coleccionCopiaAulas[i] = aulaCopia;
 		}
