@@ -3,6 +3,7 @@ package org.iesalandalus.programacion.reservasaulas.mvc.modelo.negocio;
 import javax.naming.OperationNotSupportedException;
 
 import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Aula;
+import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Permanencia;
 import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Profesor;
 import org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio.Reserva;
 
@@ -163,13 +164,13 @@ public class Reservas {
 		
 		coleccionReservasProfesor = new Reserva[getTamano()];
 		
-		// recorremos todas las citas comparando
-		for (int i = 0; i < coleccionReservas.length && coleccionReservas[i] != null; i++) {
+		for (int i = 0; i < getTamano()-1 && coleccionReservas[i] != null; i++) {
 			Reserva reserva = new Reserva(coleccionReservas[i]);
 			
-			if (profesor.equals(reserva.getProfesor()))
+			if (profesor.equals(reserva.getProfesor())) {
 				coleccionReservasProfesor[indice] = reserva;
 				indice++;
+			}
 		}
 		
 		return coleccionReservasProfesor;
@@ -185,15 +186,56 @@ public class Reservas {
 		
 		coleccionReservasAula = new Reserva[getTamano()];
 		
-		// recorremos todas las citas comparando
-		for (int i = 0; i < coleccionReservas.length && coleccionReservas[i] != null; i++) {
+		for (int i = 0; i < getTamano()-1 && coleccionReservas[i] != null; i++) {
 			Reserva reserva = new Reserva(coleccionReservas[i]);
 			
-			if (aula.equals(reserva.getAula()))
+			if (aula.equals(reserva.getAula())) {
 				coleccionReservasAula[indice] = reserva;
 				indice++;
+			}
 		}
 		
 		return coleccionReservasAula;
+	}
+	
+	public Reserva[] getReservasPermanencia(Permanencia permanencia) {
+		if (permanencia ==  null)
+			throw new NullPointerException ("ERROR: No se puede buscar una reserva con permanencia nula.");
+		
+		int indice = 0;
+		
+		Reserva[] coleccionReservasPermanencia;
+		
+		coleccionReservasPermanencia = new Reserva[getTamano()];
+		
+		for (int i = 0; i < getTamano()-1 && coleccionReservas[i] != null; i++) {
+			Reserva reserva = new Reserva(coleccionReservas[i]);
+			
+			if (permanencia.equals(reserva.getPermanencia())) {
+				coleccionReservasPermanencia[indice] = reserva;
+				indice++;
+			}
+		}
+		
+		return coleccionReservasPermanencia; 
+	}
+	
+	public boolean consultarDisponibilidad (Aula aula, Permanencia permanencia) {
+		boolean disponible = true;
+		
+		if (aula == null)
+			throw new NullPointerException("ERROR: No se puede consultar la disponibilidad de un aula nula.");
+
+		if (permanencia == null)
+			throw new NullPointerException("ERROR: No se puede consultar la disponibilidad de una permanencia nula.");
+		
+		for(int i = 0; i < getTamano()-1 && coleccionReservas[i] != null; i++) {
+			
+			if(coleccionReservas[i].getAula().equals(aula) && coleccionReservas[i].getPermanencia().equals(permanencia))
+				disponible = false;
+		}
+		
+		return disponible;
+			
 	}
 }
