@@ -1,68 +1,68 @@
 package org.iesalandalus.programacion.reservasaulas.mvc.vista;
 
 public enum Opcion {
-	SALIR("Salir"){
+	SALIR("0.- Salir"){
 		public void ejecutar() {
 			vista.salir();
 		}
 	}, 
-	INSERTAR_AULA("Insertar aula"){
+	INSERTAR_AULA("1.- Insertar aula"){
 		vista.insertarAula();
 	}
 }, 
-	BORRAR_AULA("Borrar aula"){
+	BORRAR_AULA("2.- Borrar aula"){
 		vista.borrarAula();
 	}
 }, 
-	BUSCAR_AULA("Buscar aula"){
+	BUSCAR_AULA("3.- Buscar aula"){
 		vista.buscarAula();
 	}
 }, 
-	LISTAS_AULAS("Listar aulas"){
+	LISTAS_AULAS("4.- Listar aulas"){
 		vista.listarAulas();
 	}
 }, 
-	INSERTAR_PROFESOR("Insertar profesor"){
+	INSERTAR_PROFESOR("5.- Insertar profesor"){
 		vista.insertarProfesor();
 	}
 }, 
-	BORRAR_PROFESOR("Borrar profesor"){
+	BORRAR_PROFESOR("6.- Borrar profesor"){
 		vista.borrarProfesor();
 	}
 }, 
-	BUSCAR_PROFESOR("Buscar profesor"){
+	BUSCAR_PROFESOR("7.- Buscar profesor"){
 		vista.buscarProfesor();
 	}
 }, 
-	LISTAR_PROFESORES("Listar profesores"){
+	LISTAR_PROFESORES("8.- Listar profesores"){
 		vista.listarProfesores();
 	}
 },
-	INSERTAR_RESERVA("Insertar reserva"){
+	INSERTAR_RESERVA("9.- Insertar reserva"){
 		vista.insertarReserva();
 	}
 }, 
-	BORRAR_RESERVA("Borrar reserva"){
+	BORRAR_RESERVA("10.- Borrar reserva"){
 		vista.borrarReserva();
 	}
 }, 
-	LISTAR_RESERVAS("Listar reservas"){
+	LISTAR_RESERVAS("11.- Listar reservas"){
 		vista.listarReservas();
 	}
 }, 
-	LISTAR_RESERVAS_AULA("Listar reservas aula"){
+	LISTAR_RESERVAS_AULA("12.- Listar reservas aula"){
 		vista.listarReservasAula();
 	}
 }, 
-	LISTAR_RESERVAS_PROFESOR("Listar reservas profesor"){
+	LISTAR_RESERVAS_PROFESOR("13.- Listar reservas profesor"){
 		vista.listarReservasProfesor();
 	}
 }, 
-	LISTAR_RESERVAS_PERMANENCIA("Listar reservas permanencia"){
+	LISTAR_RESERVAS_PERMANENCIA("14.- Listar reservas permanencia"){
 		vista.listarReservasPermanencia();
 	}
 },
-	CONSULTAR_DISPONIBILIDAD("Consultar disponibilidad"){
+	CONSULTAR_DISPONIBILIDAD("15.- Consultar disponibilidad"){
 		vista.consultarDisponibilidad();
 	}
 };
