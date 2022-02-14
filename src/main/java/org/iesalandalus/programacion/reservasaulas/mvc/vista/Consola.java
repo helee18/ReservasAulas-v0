@@ -95,13 +95,11 @@ public class Consola {
 	public static Tramo leerTramo() {
 		Tramo[] tramo = Tramo.values();
 		
-		System.out.println(tramo);
-		
 		int tramoElegido;
 		
 		do {
 			
-			System.out.println("Elige un tramo: ");
+			System.out.println("Elige un tramo (0- Mañana, 1- Tarde: ");
 			tramoElegido = Entrada.entero();
 			
 		} while (tramoElegido < 0 || tramoElegido > 1) ;
