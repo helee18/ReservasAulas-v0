@@ -1,7 +1,7 @@
 package org.iesalandalus.programacion.reservasaulas.mvc.modelo.dominio;
 
 public enum Tramo {
-	MANANA("Mañana"),TARDE("Tarde"); //opciones
+	MANANA("0.- Mañana"),TARDE("1.- Tarde"); //opciones
 	
 	private String cadenaAMostrar; 
 	
