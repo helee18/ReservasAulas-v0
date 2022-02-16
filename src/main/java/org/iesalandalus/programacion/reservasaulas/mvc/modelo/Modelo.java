@@ -71,21 +71,21 @@ public class Modelo {
 		profesores.insertar(profesor);
 	}
 	
-	public void borrarProfesore(Profesor profesor) throws OperationNotSupportedException {
+	public void borrarProfesor(Profesor profesor) throws OperationNotSupportedException {
 		profesores.borrar(profesor);
 	}
 	
 	// Metodos clase reservas
 	
-	public Reserva[] getReservaes() {
+	public Reserva[] getReservas() {
 		return reservas.get();
 	}
 	
-	public int getNumReservaes() {
+	public int getNumReservas() {
 		return reservas.getTamano();
 	}
 	
-	public String[] representarReservaes() {
+	public String[] representarReservas() {
 		return reservas.representar();
 	}
 	
@@ -97,7 +97,7 @@ public class Modelo {
 		reservas.insertar(reserva);
 	}
 	
-	public void anularReservae(Reserva reserva) throws OperationNotSupportedException {
+	public void anularReserva(Reserva reserva) throws OperationNotSupportedException {
 		reservas.borrar(reserva);
 	}
 	
