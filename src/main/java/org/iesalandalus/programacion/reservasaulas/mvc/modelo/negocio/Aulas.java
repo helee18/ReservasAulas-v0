@@ -125,18 +125,15 @@ public class Aulas {
 		if (aula == null) 
 			throw new NullPointerException("ERROR: No se puede borrar un aula nula.");
 		
-		if (buscar(aula) == null)
-			throw new OperationNotSupportedException("ERROR: No existe ningún aula con ese nombre.");
+		int indice = buscarIndice(aula);
 		
-		// borrar cita
-		int indice = buscarIndice(aula); // buscamos indice de cita a borrar
+		if (tamanoSuperado(indice)) {
+			desplazarUnaPosicionHaciaIzquierda(indice);
 		
-		coleccionAulas[indice] = null; // asignamos un elemento vacio en esa posicion
-		
-		desplazarUnaPosicionHaciaIzquierda(indice); // movemos todo para no dejar huecos en medio
-		
-		// actualizamos tamaño
-		tamano--;
+			tamano--;
+		}else {
+			throw new OperationNotSupportedException("ERROR: El aula no existe");
+		}
 	}
 	
 	public String[] representar() {
