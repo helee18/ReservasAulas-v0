@@ -22,6 +22,8 @@ public class Aulas {
 	}
 	
 	public Aula[] get() {
+		if (tamano == 0)
+			throw new IllegalArgumentException("ERROR: La lista de reservas está vacia.");
 		
 		return copiaProfundaAulas(coleccionAulas);
 	}
