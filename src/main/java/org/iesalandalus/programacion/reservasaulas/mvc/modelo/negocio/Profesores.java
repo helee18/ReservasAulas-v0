@@ -126,18 +126,15 @@ public class Profesores {
 		if (profesor == null) 
 			throw new NullPointerException("ERROR: No se puede borrar un profesor nulo.");
 		
-		if (buscar(profesor) == null)
-			throw new OperationNotSupportedException("ERROR: No existe ningún profesor con ese nombre.");
+		int indice = buscarIndice(profesor);
 		
-		// borrar cita
-		int indice = buscarIndice(profesor); // buscamos indice de cita a borrar
+		if (tamanoSuperado(indice)) {
+			desplazarUnaPosicionHaciaIzquierda(indice);
 		
-		coleccionProfesores[indice] = null; // asignamos un elemento vacio en esa posicion
-		
-		desplazarUnaPosicionHaciaIzquierda(indice); // movemos todo para no dejar huecos en medio
-		
-		// actualizamos tamaño
-		tamano--;
+			tamano--;
+		}else {
+			throw new OperationNotSupportedException("ERROR: El profesor no existe");
+		}
 	}
 	
 	public String[] representar() {
