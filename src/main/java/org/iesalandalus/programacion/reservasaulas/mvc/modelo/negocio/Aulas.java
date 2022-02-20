@@ -137,6 +137,9 @@ public class Aulas {
 	}
 	
 	public String[] representar() {
+		if (tamano == 0)
+			throw new IllegalArgumentException("ERROR: La lista de reservas está vacia.");
+		
 		String[] representacion = new String[tamano];
 		
 		for (int i = 0; !tamanoSuperado(i); i++) {
