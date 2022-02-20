@@ -94,6 +94,9 @@ public class Aulas {
 		if (buscar(aula) != null)
 			throw new OperationNotSupportedException("ERROR: El aula ya existe");
 		
+		if (capacidadSuperada(buscarIndice(aula)))
+			throw new IllegalArgumentException("ERROR: No se pueden insertar mas aulas.");
+		
 		// insertamos la nueva cita y actualizamos el tamaño
 		coleccionAulas[indice] = new Aula(aula);
 		tamano++;
