@@ -111,9 +111,14 @@ public class Vista {
 		aula = Consola.leerAula();
 		permanencia = new Permanencia(Consola.leerDia(), Consola.leerTramo());
 		
-		reserva = new Reserva(profesor, aula, permanencia);
-		
-		controlador.realizarReserva(reserva);
+		if (controlador.buscarAula(aula) != null) { 
+			throw new IllegalArgumentException("ERROR: No se puede realizar una reserva si el aula un no existe.");
+		} else if (controlador.buscarProfesor(profesor) != null) {
+			throw new IllegalArgumentException("ERROR: No se puede realizar una reserva si el profesor un no existe.");
+		} else {
+			reserva = new Reserva(profesor, aula, permanencia);
+			controlador.realizarReserva(reserva);
+		}
 		
 	}
 	
