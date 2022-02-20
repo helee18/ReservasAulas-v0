@@ -129,18 +129,15 @@ public class Reservas {
 		if (reserva == null) 
 			throw new NullPointerException("ERROR: No se puede borrar una reserva nula.");
 		
-		if (buscar(reserva) == null)
-			throw new OperationNotSupportedException("ERROR: No existe ninguna reserva con ese nombre.");
+		int indice = buscarIndice(reserva);
 		
-		// borrar cita
-		int indice = buscarIndice(reserva); // buscamos indice de cita a borrar
+		if (tamanoSuperado(indice)) {
+			desplazarUnaPosicionHaciaIzquierda(indice);
 		
-		coleccionReservas[indice] = null; // asignamos un elemento vacio en esa posicion
-		
-		desplazarUnaPosicionHaciaIzquierda(indice); // movemos todo para no dejar huecos en medio
-		
-		// actualizamos tamaño
-		tamano--;
+			tamano--;
+		}else {
+			throw new OperationNotSupportedException("ERROR: El profesor no existe");
+		}
 	}
 	
 	public String[] representar() {
