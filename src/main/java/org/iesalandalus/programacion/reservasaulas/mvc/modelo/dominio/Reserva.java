@@ -29,7 +29,7 @@ public class Reserva {
 	private void setPermanencia(Permanencia permanencia) {
 		if (permanencia == null)
 			throw new NullPointerException("ERROR: La reserva se debe hacer para una permanencia concreta.");
-		this.permanencia = permanencia;
+		this.permanencia = new Permanencia(permanencia);
 	}
 	
 	public Aula getAula() {
@@ -40,7 +40,7 @@ public class Reserva {
 		if (aula == null)
 			throw new NullPointerException("ERROR: La reserva debe ser para un aula concreta.");
 		
-		this.aula = aula;
+		this.aula = new Aula(aula);
 	}
 	
 	public Profesor getProfesor() {
@@ -51,7 +51,7 @@ public class Reserva {
 		if (profesor == null)
 			throw new NullPointerException("ERROR: La reserva debe estar a nombre de un profesor.");
 		
-		this.profesor = profesor;
+		this.profesor = new Profesor(profesor);
 	}
 
 	@Override
