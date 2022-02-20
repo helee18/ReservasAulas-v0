@@ -23,6 +23,8 @@ public class Profesores {
 	}
 	
 	public Profesor[] get() {
+		if (tamano == 0)
+			throw new IllegalArgumentException("ERROR: La lista de profesores está vacia.");
 		
 		return copiaProfundaProfesores(coleccionProfesores);
 	}
