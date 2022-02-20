@@ -95,6 +95,9 @@ public class Profesores {
 		if (buscar(profesor) != null)
 			throw new OperationNotSupportedException("ERROR: El profesor ya existe");
 		
+		if (capacidadSuperada(buscarIndice(profesor)))
+			throw new IllegalArgumentException("ERROR: No se pueden insertar mas profesores.");
+		
 		// insertamos la nueva cita y actualizamos el tamaño
 		coleccionProfesores[indice] = new Profesor(profesor);
 		tamano++;
