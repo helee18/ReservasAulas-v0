@@ -12,7 +12,7 @@ public class Vista {
 	private Controlador controlador;
 	
 	public Vista() {
-		
+		Opcion.setVista(this);
 	}
 	
 	public void setControlador(Controlador controlador) {
