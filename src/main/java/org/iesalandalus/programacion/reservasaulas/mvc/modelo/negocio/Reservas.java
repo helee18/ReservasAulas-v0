@@ -93,6 +93,9 @@ public class Reservas {
 		if (capacidadSuperada(indice))
 			throw new OperationNotSupportedException("ERROR: No se aceptan más reservas.");
 		
+		if (buscar(reserva) != null)
+			throw new OperationNotSupportedException("ERROR: La reserva ya existe");
+		
 		// insertamos la nueva cita y actualizamos el tamaño
 		coleccionReservas[indice] = new Reserva(reserva);
 		tamano++;
