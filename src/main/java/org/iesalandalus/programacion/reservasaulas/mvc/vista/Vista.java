@@ -173,10 +173,14 @@ public class Vista {
 		Permanencia permanencia;
 		
 		aula = Consola.leerAula();
-		permanencia = new Permanencia(Consola.leerDia(), Consola.leerTramo());
 		
+		if (controlador.buscarAula(aula) != null) { 
+			throw new IllegalArgumentException("ERROR: No se puede realizar una reserva si el aula un no existe.");
+		} else {
+			permanencia = new Permanencia(Consola.leerDia(), Consola.leerTramo());
+			controlador.consultarDisponibilidad(aula, permanencia);
+		}
 		
-		controlador.consultarDisponibilidad(aula, permanencia);
 		
 	}
 }
