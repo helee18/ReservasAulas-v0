@@ -85,6 +85,9 @@ public class Controlador {
 		if (aula == null)
 			throw new NullPointerException("ERROR: No se puede buscar un aula nula.");
 		
+		if (modelo.buscarAula(aula) == null)
+			throw new IllegalArgumentException("ERROR: El aula no existe");
+		
 		return modelo.buscarAula(aula);
 	}
 	
@@ -92,8 +95,10 @@ public class Controlador {
 		if (profesor == null)
 			throw new NullPointerException("ERROR: No se puede buscar un profesor nulo.");
 		
+		if (modelo.buscarProfesor(profesor) == null)
+			throw new IllegalArgumentException("ERROR: El profesor no existe");
+		
 		return modelo.buscarProfesor(profesor);
-			
 	}
 	
 	public String[] representarAulas() {
