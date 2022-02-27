@@ -132,7 +132,7 @@ public class Aulas {
 		
 			tamano--;
 		}else {
-			throw new OperationNotSupportedException("ERROR: El aula no existe");
+			throw new OperationNotSupportedException("ERROR: El aula no existe.");
 		}
 	}
 	
